@@ -1,0 +1,29 @@
+/* CSS for Navbar */
+
+.navbar__div{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    border: solid 5px black;
+    border-radius: 20px;
+}
+
+.navbar__UI {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: center;
+  max-width: 2000px;
+  width: 100%;
+}
+
+.navbar__logo__image {
+  height: 100px;
+  width: 100px;
+}
+
+.navbar__input__box {
+  border-radius: 20px;
+  height: 30px;
+  margin-top: 10px;
+}
