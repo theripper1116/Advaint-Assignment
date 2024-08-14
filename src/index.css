@@ -1,11 +1,11 @@
 /* CSS for Navbar */
 
-.navbar__div{
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
-    border: solid 5px black;
-    border-radius: 20px;
+.navbar__div {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  border: solid 5px black;
+  border-radius: 20px;
 }
 
 .navbar__UI {
@@ -26,4 +26,9 @@
   border-radius: 20px;
   height: 30px;
   margin-top: 10px;
+}
+
+.image__movie__poster {
+  height: 200px;
+  width: 150px;
 }

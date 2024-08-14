@@ -1,22 +1,37 @@
 import { useEffect, useState } from "react";
 import useFetchTMDBApi from "../utils/useFetchTMDBApi";
+import InfiniteScroll from "react-infinite-scroll-component";
+import { TMDB__IMAGE__URL } from "../utils/links";
 
 const MovieList = () => {
-  let data = new Array();
   const [pageNumber, setPageNumber] = useState(1);
-  const [dataToDisplay, setDataToDisplay] = useState();
-  data.push(...useFetchTMDBApi(pageNumber));
-  console.log(data);
+  let data = useFetchTMDBApi(pageNumber);
 
   useEffect(() => {
-    setDataToDisplay(data);
+    setPageNumber((prev) => prev + 1);
   }, []);
+
   return (
     <div className="movie__list__UI">
-      {dataToDisplay &&
-        dataToDisplay.map((ele) => {
-          return <div>{ele.original_title}</div>;
-        })}
+      {/* <InfiniteScroll
+        dataLength={data.length}
+        next={useFetchTMDBApi}
+        hasMore={true}
+        loader={<p>Loading...</p>}
+        endMessage={<p>No more data to load.</p>}
+      > */}
+        {data &&
+          data.map((ele) => {
+            return (
+              <div key={ele.id}>
+                <img
+                  className="image__movie__poster"
+                  src={TMDB__IMAGE__URL + ele.poster_path}
+                ></img>
+              </div>
+            );
+          })}
+      {/* </InfiniteScroll> */}
     </div>
   );
 };

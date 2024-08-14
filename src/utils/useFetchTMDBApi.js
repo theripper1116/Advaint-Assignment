@@ -16,7 +16,7 @@ const useFetchTMDBApi = (pageNumber) => {
       const getRawData = await fetch(TMDB__API + pageNumber, options);
       const getData = await getRawData.json();
       console.log(getData);
-      setDataFromTMDB([dataFromTMDB, ...getData.results]);
+      setDataFromTMDB([...dataFromTMDB, ...getData.results]);
     } catch (err) {
       console.log(err);
     }
@@ -24,7 +24,7 @@ const useFetchTMDBApi = (pageNumber) => {
 
   useEffect(() => {
     fectchDataFromTMDBAPI(pageNumber);
-  }, [page]);
+  }, []);
   return dataFromTMDB;
 };
 
