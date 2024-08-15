@@ -4,6 +4,8 @@ import { TMDB__API, TMDB__API__KEY } from "./links";
 const useFetchTMDBApi = (pageNumber) => {
   const [dataFromTMDB, setDataFromTMDB] = useState([]);
   const [page] = useState(pageNumber);
+  console.log(page);
+  console.log("inside useFetch");
   const options = {
     method: "GET",
     headers: {
@@ -11,11 +13,10 @@ const useFetchTMDBApi = (pageNumber) => {
       Authorization: TMDB__API__KEY,
     },
   };
-  const fectchDataFromTMDBAPI = async (pageNumber) => {
+  const fetchDataFromTMDBAPI = async (page) => {
     try {
-      const getRawData = await fetch(TMDB__API + pageNumber, options);
+      const getRawData = await fetch(TMDB__API + page, options);
       const getData = await getRawData.json();
-      console.log(getData);
       setDataFromTMDB([...dataFromTMDB, ...getData.results]);
     } catch (err) {
       console.log(err);
@@ -23,7 +24,7 @@ const useFetchTMDBApi = (pageNumber) => {
   };
 
   useEffect(() => {
-    fectchDataFromTMDBAPI(pageNumber);
+    fetchDataFromTMDBAPI(page);
   }, []);
   return dataFromTMDB;
 };

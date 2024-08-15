@@ -8,3 +8,6 @@ export const TMDB__API__KEY =
   "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI5ZWE1NmYxY2UxZmM3YjBiZGM0ZWMzMGJiZTlhYWZiNCIsIm5iZiI6MTcyMzY0MDIxMy4zNjcyNjIsInN1YiI6IjY2NDc1YTczM2Y0NGRjNWUzNzc4NzRmMyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.PlYtVbJ5t1nNZEsdRq0xL76LJxQkjBtLErTLyTqRPNw";
 
 export const TMDB__IMAGE__URL = "https://image.tmdb.org/t/p/original";
+
+export const TMDB__GENRE =
+  "https://api.themoviedb.org/3/genre/movie/list?language=en-US";
