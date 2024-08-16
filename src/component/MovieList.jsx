@@ -31,6 +31,7 @@ const MovieList = ({ movieData, changePageNumber }) => {
               ></img>
               <h4>{ele.original_title}</h4>
               <h4>{ele.release_date}</h4>
+              <span className="favourite__button">Add to favourite</span>
             </div>
           );
         })}

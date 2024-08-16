@@ -29,6 +29,12 @@ body {
   width: 100px;
 }
 
+.navbar__input__div {
+  display: grid;
+  grid-template-columns: auto;
+  margin-right: 30px;
+}
+
 .navbar__input__box {
   border-radius: 20px;
   height: 30px;
@@ -86,33 +92,20 @@ body {
   position: fixed;
 }
 
-.sort__list__genre {
+.sort__list__category {
   display: grid;
   grid-template-columns: auto auto;
-  padding: 10px;
   width: 100%;
   justify-content: center;
   cursor: pointer;
 }
 
-.sort__list__year {
-  display: grid;
-  grid-template-columns: auto;
-  padding: 10px;
-  width: 100%;
-  justify-content: center;
-  cursor: pointer;
+.sort__list__item {
+  background-color: rgb(14, 15, 15);
+  border-radius: 5px;
+  margin: 4px;
+  padding: 1px;
 }
-
-.sort__list__rating {
-  display: grid;
-  grid-template-columns: auto;
-  padding: 10px;
-  width: 100%;
-  justify-content: center;
-  cursor: pointer;
-}
-
 /* CSS for Clear button */
 
 .clear__sort__button {
@@ -121,4 +114,21 @@ body {
   padding: 10px;
   margin-top: 10px;
   color: white;
+  cursor: pointer;
+}
+
+/* CSS for Search List */
+
+.movie__search__list {
+  display: grid;
+  grid-template-columns: auto;
+}
+
+/* CSS for favourite__button */
+
+.favourite__button {
+  background-color: rgb(14, 15, 15);
+  border-radius: 20px;
+  padding: 5px;
+  cursor: pointer;
 }

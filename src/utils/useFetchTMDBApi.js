@@ -1,16 +1,11 @@
 import { useEffect, useState } from "react";
-import { TMDB__API, TMDB__API__KEY } from "./links";
+import { TMDB__API } from "./links";
+import { options } from "./optionsForTMDBApi";
 
 const useFetchTMDBApi = (pageNumber) => {
   const [dataFromTMDB, setDataFromTMDB] = useState([]);
   const [page] = useState(pageNumber);
-  const options = {
-    method: "GET",
-    headers: {
-      accept: "application/json",
-      Authorization: TMDB__API__KEY,
-    },
-  };
+
   const fetchDataFromTMDBAPI = async (page) => {
     try {
       const getRawData = await fetch(TMDB__API + page, options);

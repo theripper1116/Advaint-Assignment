@@ -8,11 +8,12 @@ const SortMovie = ({ sortTheArray, genreData, movieData }) => {
     <>
       <div className="sort__list">
         <h3>Genre</h3>
-        <div className="sort__list__genre">
+        <div className="sort__list__category">
           {genreData &&
             genreData.map((ele, index) => {
               return (
                 <span
+                  className="sort__list__item"
                   key={index}
                   onClick={() => {
                     sortTheArray(ele, "genre");
@@ -24,11 +25,12 @@ const SortMovie = ({ sortTheArray, genreData, movieData }) => {
             })}
         </div>
         <h3>Year</h3>
-        <div className="sort__list__year">
+        <div className="sort__list__category">
           {getMovieYear &&
             getMovieYear.map((ele, index) => {
               return (
                 <span
+                  className="sort__list__item"
                   key={index}
                   onClick={() => {
                     sortTheArray(ele, "year");
@@ -40,8 +42,9 @@ const SortMovie = ({ sortTheArray, genreData, movieData }) => {
             })}
         </div>
         <h3>Rating</h3>
-        <div className="sort__list__rating">
+        <div className="sort__list__category">
           <span
+            className="sort__list__item"
             onClick={() => {
               sortTheArray("good", "rating");
             }}
@@ -49,6 +52,7 @@ const SortMovie = ({ sortTheArray, genreData, movieData }) => {
             Good
           </span>
           <span
+            className="sort__list__item"
             onClick={() => {
               sortTheArray("average", "rating");
             }}
@@ -56,6 +60,7 @@ const SortMovie = ({ sortTheArray, genreData, movieData }) => {
             Average
           </span>
           <span
+            className="sort__list__item"
             onClick={() => {
               sortTheArray("bad", "rating");
             }}

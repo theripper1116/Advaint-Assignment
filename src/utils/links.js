@@ -11,3 +11,6 @@ export const TMDB__IMAGE__URL = "https://image.tmdb.org/t/p/original";
 
 export const TMDB__GENRE =
   "https://api.themoviedb.org/3/genre/movie/list?language=en-US";
+
+export const TMDB__SEARCH__MOVIE__API =
+  "https://api.themoviedb.org/3/search/movie?query=";
