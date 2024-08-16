@@ -1,7 +1,9 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { TMDB__IMAGE__URL } from "../utils/links";
 
-const MovieList = ({ movieData, changePageNumber }) => {
+const MovieList = ({ movieData, changePageNumber, addToSaveList }) => {
+  const [stringForFavouriteButton, setStringForFavouriteButton] =
+    useState("Add to favourite");
   const handleInfinityScroll = async () => {
     try {
       if (
@@ -31,7 +33,12 @@ const MovieList = ({ movieData, changePageNumber }) => {
               ></img>
               <h4>{ele.original_title}</h4>
               <h4>{ele.release_date}</h4>
-              <span className="favourite__button">Add to favourite</span>
+              <span
+                className="favourite__button"
+                onClick={() => addToSaveList(ele)}
+              >
+                {stringForFavouriteButton}
+              </span>
             </div>
           );
         })}

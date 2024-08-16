@@ -1,3 +1,5 @@
+import { v4 as uuidv4 } from "uuid";
+
 import { useState } from "react";
 import MovieList from "./component/MovieList";
 import Navbar from "./component/Navbar";
@@ -9,11 +11,14 @@ function App() {
   const [pageNumber, setPageNumber] = useState(1);
   const [sortedMovieList, setSortedMovieList] = useState();
   const [sortButtonVisibility, setSortButtonVisibility] = useState(false);
+  const [savedMovieList, setSavedMovieList] = useState([]);
+
   let movieData = useFetchTMDBApi(pageNumber);
+  let genreData = useFetchGenre();
+
   const changePageNumber = () => {
     setPageNumber((prev) => prev + 1);
   };
-  let genreData = useFetchGenre();
   const sortTheArray = (sortOrder, sortType) => {
     if (sortType === "genre") {
       const sortedArray = movieData.filter((ele) => {
@@ -57,6 +62,28 @@ function App() {
     setSortedMovieList();
     setSortButtonVisibility(false);
   };
+
+  const addToSaveList = (movie) => {
+    let tempObj = {
+      id: uuidv4(),
+      movieDetail: movie,
+    };
+    setSavedMovieList([...savedMovieList, tempObj]);
+  };
+
+  const saveTheListToLocalStorage = () => {
+    try {
+      savedMovieList.forEach((ele) => {
+        localStorage.setItem(ele.id, ele.movieDetail);
+      });
+      alert("Saved successfully!!!");
+      setSavedMovieList([]);
+      setSortButtonVisibility(false);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   return (
     <>
       <div className="navbar__div">
@@ -73,6 +100,12 @@ function App() {
         </div>
       )}
 
+      {savedMovieList.length >= 1 && (
+        <div className="save__button__for__movie__list">
+          <span onClick={saveTheListToLocalStorage}>Click Here to save!!</span>
+        </div>
+      )}
+
       <div className="movie__and__sort__div">
         <div className="movie__sort__div">
           <SortMovie
@@ -85,6 +118,7 @@ function App() {
           <MovieList
             movieData={sortedMovieList ? sortedMovieList : movieData}
             changePageNumber={changePageNumber}
+            addToSaveList={addToSaveList}
           />
         </div>
       </div>
