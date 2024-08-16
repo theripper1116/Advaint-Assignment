@@ -4,8 +4,6 @@ import { TMDB__API, TMDB__API__KEY } from "./links";
 const useFetchTMDBApi = (pageNumber) => {
   const [dataFromTMDB, setDataFromTMDB] = useState([]);
   const [page] = useState(pageNumber);
-  console.log(page);
-  console.log("inside useFetch");
   const options = {
     method: "GET",
     headers: {

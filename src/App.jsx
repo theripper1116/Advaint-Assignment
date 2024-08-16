@@ -14,7 +14,6 @@ function App() {
     setPageNumber((prev) => prev + 1);
   };
   let genreData = useFetchGenre();
-  const sortedArrayList = [];
   const sortTheArray = (sortOrder, sortType) => {
     if (sortType === "genre") {
       const sortedArray = movieData.filter((ele) => {
@@ -65,7 +64,12 @@ function App() {
       </div>
       {sortButtonVisibility && (
         <div className="clear__sort">
-          <button className="clear__sort__button" onClick={() => clearSortArray()}>Clear</button>
+          <button
+            className="clear__sort__button"
+            onClick={() => clearSortArray()}
+          >
+            Clear
+          </button>
         </div>
       )}
 
