@@ -17,7 +17,6 @@ function App() {
   let genreData = useFetchGenre();
 
   const changePageNumber = () => {
-    console.log("inside changePageNumber");
     setPageNumber((prev) => prev + 1);
   };
   const sortTheArray = (sortOrder, sortType) => {
@@ -65,7 +64,6 @@ function App() {
   };
 
   const addToSaveList = (movie) => {
-    console.log("inside assToSaveList");
     let tempObj = {
       id: uuidv4(),
       movieDetail: movie,
@@ -74,7 +72,6 @@ function App() {
   };
 
   const saveTheListToLocalStorage = () => {
-    console.log("inside saveTheListToLocalStorage");
     try {
       savedMovieList.forEach((ele) => {
         localStorage.setItem(ele.id, ele.movieDetail);

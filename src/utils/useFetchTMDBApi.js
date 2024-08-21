@@ -18,7 +18,7 @@ const useFetchTMDBApi = (pageNumber) => {
   useEffect(() => {
     fetchDataFromTMDBAPI(pageNumber);
     console.log(pageNumber);
-  }, []);
+  }, [pageNumber]);
   return dataFromTMDB;
 };
 

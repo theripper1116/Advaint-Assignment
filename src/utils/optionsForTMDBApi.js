@@ -1,9 +1,9 @@
-import { TMDB__API__KEY } from "./links";
+const REACT_APP_TMDB_API_KEY = import.meta.env.REACT_APP_TMDB_API_KEY;
 
 export const options = {
   method: "GET",
   headers: {
     accept: "application/json",
-    Authorization: TMDB__API__KEY,
+    Authorization: REACT_APP_TMDB_API_KEY,
   },
 };
