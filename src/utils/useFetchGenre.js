@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { TMDB__GENRE, TMDB__API__KEY } from "./links";
+import { REACT_APP_TMDB_API_KEY, TMDB__GENRE } from "./links";
 
 const useFetchGenre = () => {
   const [genreDataFromTMDB, setGenreDataFromTMDB] = useState([]);
@@ -7,7 +7,7 @@ const useFetchGenre = () => {
     method: "GET",
     headers: {
       accept: "application/json",
-      Authorization: TMDB__API__KEY,
+      Authorization: REACT_APP_TMDB_API_KEY,
     },
   };
   const fetchGenreDataFromTMDBAPI = async () => {

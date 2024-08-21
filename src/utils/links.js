@@ -11,3 +11,6 @@ export const TMDB__GENRE =
 
 export const TMDB__SEARCH__MOVIE__API =
   "https://api.themoviedb.org/3/search/movie?query=";
+
+export const REACT_APP_TMDB_API_KEY =
+  "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI5ZWE1NmYxY2UxZmM3YjBiZGM0ZWMzMGJiZTlhYWZiNCIsIm5iZiI6MTcyMzY0MDIxMy4zNjcyNjIsInN1YiI6IjY2NDc1YTczM2Y0NGRjNWUzNzc4NzRmMyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.PlYtVbJ5t1nNZEsdRq0xL76LJxQkjBtLErTLyTqRPNw";

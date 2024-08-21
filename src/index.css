@@ -114,6 +114,12 @@ body {
   grid-template-columns: auto auto;
   width: 100%;
   justify-content: center;
+  overflow-y: scroll;
+  max-height: 150px;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
 }
 
 .sort__list__item {
