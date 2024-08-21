@@ -64,6 +64,7 @@ function App() {
   };
 
   const addToSaveList = (movie) => {
+    console.log("inside assToSaveList");
     let tempObj = {
       id: uuidv4(),
       movieDetail: movie,
@@ -72,6 +73,7 @@ function App() {
   };
 
   const saveTheListToLocalStorage = () => {
+    console.log("inside saveTheListToLocalStorage");
     try {
       savedMovieList.forEach((ele) => {
         localStorage.setItem(ele.id, ele.movieDetail);
