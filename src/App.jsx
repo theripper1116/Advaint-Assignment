@@ -17,6 +17,7 @@ function App() {
   let genreData = useFetchGenre();
 
   const changePageNumber = () => {
+    console.log("inside changePageNumber");
     setPageNumber((prev) => prev + 1);
   };
   const sortTheArray = (sortOrder, sortType) => {

@@ -4,7 +4,6 @@ import { options } from "./optionsForTMDBApi";
 
 const useFetchTMDBApi = (pageNumber) => {
   const [dataFromTMDB, setDataFromTMDB] = useState([]);
-  const [page] = useState(pageNumber);
 
   const fetchDataFromTMDBAPI = async (page) => {
     try {
@@ -17,7 +16,8 @@ const useFetchTMDBApi = (pageNumber) => {
   };
 
   useEffect(() => {
-    fetchDataFromTMDBAPI(page);
+    fetchDataFromTMDBAPI(pageNumber);
+    console.log(pageNumber);
   }, []);
   return dataFromTMDB;
 };

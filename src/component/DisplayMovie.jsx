@@ -17,12 +17,6 @@ const DisplayMovie = ({ ele, addToSaveList }) => {
       <h4>{ele.release_date}</h4>
       <span
         className="favourite__button"
-        // style={
-        //   stringForFavouriteButton === "Added to favourite" && {
-        //     backgroundColor: "red",
-        //     color: "black",
-        //   }
-        // }
         onClick={() => {
           addToSaveList(ele);
           setStringForFavouriteButton("Added to favourite");
