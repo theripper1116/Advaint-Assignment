@@ -12,6 +12,7 @@ function App() {
   const [sortedMovieList, setSortedMovieList] = useState();
   const [sortButtonVisibility, setSortButtonVisibility] = useState(false);
   const [savedMovieList, setSavedMovieList] = useState([]);
+  const [searchedData, setSearchedData] = useState();
 
   let movieData = useFetchTMDBApi(pageNumber);
   let genreData = useFetchGenre();
@@ -87,7 +88,7 @@ function App() {
   return (
     <>
       <div className="navbar__div">
-        <Navbar />
+        <Navbar setSearchedData={setSearchedData} />
       </div>
       {sortButtonVisibility && (
         <div className="clear__sort">
@@ -116,7 +117,13 @@ function App() {
         </div>
         <div className="movie__list__div">
           <MovieList
-            movieData={sortedMovieList ? sortedMovieList : movieData}
+            movieData={
+              searchedData
+                ? searchedData
+                : sortedMovieList
+                ? sortedMovieList
+                : movieData
+            }
             changePageNumber={changePageNumber}
             addToSaveList={addToSaveList}
           />

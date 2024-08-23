@@ -19,7 +19,7 @@ const MovieList = ({ movieData, changePageNumber, addToSaveList }) => {
     return () => window.removeEventListener("scroll", handleInfinityScroll);
   }, []);
 
-  if (movieData.length <= 1)
+  if (movieData.length < 1)
     return <div className="no__movies__found">No Movies Found</div>;
   else
     return (
